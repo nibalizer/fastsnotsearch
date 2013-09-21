@@ -16,5 +16,10 @@ Getting started:
 ----------------
 
 
+    virtualenv fast-snot
+    source fast-snot/bin/activate
+    pip install -r requirements.txt
+
+    python app.py
 
 
