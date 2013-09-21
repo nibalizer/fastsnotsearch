@@ -5,8 +5,16 @@ A simple flask app to search snot very quickly
 
 
 Components:
+-----------
 
-1) cron to sync local copy of snot with old copy
+1) cron to sync local copy of snot with real snot, pull operation, not done yet
 
-2) web app
+2) web app that wraps notmuch mail searcher
+
+
+Getting started:
+----------------
+
+
+
 
