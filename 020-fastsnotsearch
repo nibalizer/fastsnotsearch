@@ -1,0 +1,18 @@
+<VirtualHost *:80>
+    ServerName fastsnot.cat.pdx.edu
+
+    WSGIDaemonProcess fastsnotsearch user=nibz group=them threads=5
+    WSGIScriptAlias / /u/nibz/projects/fast-snot-search/fastsnot.wsgi
+
+    <Directorymatch "^/.*/\.git/">
+    Order deny,allow
+    Deny from all
+    </Directorymatch>
+
+    <Directory /u/nibz/projects/fast-snot-search>
+        WSGIProcessGroup fastsnotsearch
+        WSGIApplicationGroup %{GLOBAL}
+        Order deny,allow
+        Allow from all
+    </Directory>
+</VirtualHost>
