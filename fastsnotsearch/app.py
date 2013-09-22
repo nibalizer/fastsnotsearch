@@ -6,8 +6,6 @@ import notmuch
 
 db = notmuch.Database()
 
-app = Flask(__name__)
-
 @app.route("/")
 def hello():
     return "Hello World!"
@@ -27,7 +25,3 @@ def search(term):
       len(output), term))
     return "\n<p>".join(output)
 
-
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0',port=4567,debug=True)
