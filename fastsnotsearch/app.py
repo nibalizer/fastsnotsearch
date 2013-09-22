@@ -23,6 +23,7 @@ def nibz():
     output = [ str(i) for i in list(query.search_messages()) ]
     return "\n<p>".join(output)
 
+
 @app.route("/search/<term>")
 def search(term):
     t1 = datetime.datetime.now()
@@ -33,6 +34,10 @@ def search(term):
     output.insert(0, "Found <b>{0}</b> messages matching <b>{1}</b> in <b>{2}</b> milliseconds".format(
       len(output), term, delta_t))
     return "\n<p>".join(output)
+
+@app.route("/v2/search")
+def searchroot():
+    return render_template('searchroot.html')
 
 @app.route("/v2/search/<term>")
 def searchv2(term):
