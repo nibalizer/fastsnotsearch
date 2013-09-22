@@ -5,7 +5,7 @@
 <table class="filter-table table table-striped {% if condensed %}table-condensed{% endif%}" style="table-layout:fixed">
   <thead>
     <tr>
-      <th>Msg-id</th>
+      <th>Link</th>
       <th>Subject</th>
       <th>Summary</th>
       <th>XTTS</th>
@@ -14,7 +14,7 @@
   <tbody class="searchable">
     {% for msg in msgs %}
     <tr>
-      <td><a href="/v2/message/{{msg.id}}">View</a></td>
+      <td style="word-wrap:break-word"><a href="/v2/message/{{msg.id}}">View</a></td>
       <td style="word-wrap:break-word">{{msg.subject}}</td>
       <td style="word-wrap:break-word">{{msg.summary}}</td>
       <td style="word-wrap:break-word">{{msg.xtts}}</td>
