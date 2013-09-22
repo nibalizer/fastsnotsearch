@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 {% import '_macros.html' as macros %}
 {% block content %}
+{{macros.search_box()}}
 <h1>Found {{num_msgs}} results for {{term}} in {{delta_t}} ms</h1>
-{{macros.search_results(msgs, autofocus=True, margin_bottom=10)}}
+{{macros.search_results(msgs, autofocus=True, condensed=True, margin_bottom=10)}}
 {% endblock content %}
