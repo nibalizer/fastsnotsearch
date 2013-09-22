@@ -6,6 +6,8 @@ from flask import Flask
 
 from flask import render_template, abort, request
 
+from flask import redirect, url_for
+
 app = Flask(__name__)
 
 import notmuch
@@ -14,7 +16,7 @@ db = notmuch.Database()
 
 @app.route("/")
 def hello():
-    return "Hello World!"
+    return redirect(url_for('searchroot'))
 
 @app.route("/nibz")
 def nibz():
