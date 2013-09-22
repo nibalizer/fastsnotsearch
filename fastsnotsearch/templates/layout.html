@@ -9,6 +9,28 @@
   </head>
   <body>
 
+    <div style="font-variant:small-caps"  class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <span style="margin-top:-2px;" class="brand">FSS: Fast Snot Searching</span>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              {%- for endpoint, caption in [
+              ('searchroot', 'Search Snot'),
+                ] %}
+                  <li{% if endpoint == request.endpoint %} class=active{% endif
+                    %}><a href="{{ url_for(endpoint) }}">{{ caption }}</a></li>
+                {%- endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     {% block container %}
