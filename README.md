@@ -16,6 +16,8 @@ Getting started:
 ----------------
 
 
+    apt-get install notmuch python-notmuch
+
     virtualenv fast-snot
     source fast-snot/bin/activate
     pip install -r requirements.txt
