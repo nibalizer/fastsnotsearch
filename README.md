@@ -15,15 +15,17 @@ Components:
 Getting started:
 ----------------
 
+Prereqs:
+
 
     #  apt-get install python-notmuch notmuch-vim
     #  apt-get install python notmuch libnotmuch-dev apache2 libapache2-mod-wsgi python-flask
 
+Development mode:
 
-    virtualenv fast-snot
-    source fast-snot/bin/activate
-    pip install -r requirements.txt
+    $ python app.py
 
-    python app.py
+Production mode:
 
-
+    comming soon:
+    wsgi
