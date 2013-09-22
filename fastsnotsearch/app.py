@@ -4,7 +4,7 @@ import simplejson as json
 
 from flask import Flask
 
-from flask import render_template, abort
+from flask import render_template, abort, request
 
 app = Flask(__name__)
 
@@ -39,6 +39,7 @@ def search(term):
 def searchroot():
     return render_template('searchroot.html')
 
+
 @app.route("/v2/search/<term>")
 def searchv2(term):
     t1 = datetime.datetime.now()
@@ -69,3 +70,23 @@ def messagev2(msgid):
 
 
 
+@app.route("/v3/search/snot")
+def searchv3():
+    term = request.args.get('term', '')
+    t1 = datetime.datetime.now()
+    query = db.create_query(term)
+    msgs = []
+    for i in list(query.search_messages()):
+        msg = {}
+        msg['id'] = i.get_message_id()
+        msg['subject'] = i.get_header('subject')
+        msg['summary'] = str(i)
+        msg['xtts'] = i.get_header('X-xtts')
+        msgs.append(msg)
+
+
+    t2 = datetime.datetime.now()
+    delta_t = (t2 - t1).microseconds / 1000.
+
+
+    return render_template('search.html', msgs=msgs, num_msgs=len(msgs), term=term, delta_t=delta_t)
