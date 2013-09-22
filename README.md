@@ -16,7 +16,9 @@ Getting started:
 ----------------
 
 
-    apt-get install notmuch python-notmuch
+    #  apt-get install python-notmuch notmuch-vim
+    #  apt-get install python notmuch libnotmuch-dev apache2 libapache2-mod-wsgi python-flask
+
 
     virtualenv fast-snot
     source fast-snot/bin/activate
