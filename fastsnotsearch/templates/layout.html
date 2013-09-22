@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSS: Fast Snot Searching</title>
+    <link href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/flatly/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/puppetboard.css')}}" rel="stylesheet">
+  </head>
+  <body>
+
+    {% block container %}
+    <div class="container-fluid" style="margin-bottom:55px;">
+      <div class="row-fluid">
+        {% block row_fluid %}
+        <div class="span12">
+          {% block content %} {% endblock content %}
+        </div>
+        {% endblock row_fluid %}
+      </div>
+    </div>
+    {% endblock container %}
+
+  </body>
+</html>

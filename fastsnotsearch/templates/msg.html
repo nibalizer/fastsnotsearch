@@ -1,0 +1,8 @@
+{% extends 'layout.html' %}
+{% import '_macros.html' as macros %}
+{% block content %}
+
+{% for line in msg %}
+<p> {{line}}
+{% endfor %}
+{% endblock content %}
