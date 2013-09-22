@@ -29,3 +29,5 @@ Production mode:
 
     # cp 020-fastsnotsearch /etc/apache2/sites-enabled
     # service apache2 restart
+
+You will need to create a .htpasswd directory
