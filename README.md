@@ -27,5 +27,5 @@ Development mode:
 
 Production mode:
 
-    comming soon:
-    wsgi
+    # cp 020-fastsnotsearch /etc/apache2/sites-enabled
+    # service apache2 restart
