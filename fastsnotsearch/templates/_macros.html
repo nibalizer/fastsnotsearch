@@ -1,28 +1,3 @@
-{% macro facts_table(facts, autofocus=False, condensed=False, show_node=False, margin_top=20, margin_bottom=20) -%}
-<div class="filter" style="margin-bottom:{{margin_bottom}}px;margin-top:{{margin_top}}px;">
-  <input {% if autofocus %} autofocus="autofocus" {% endif %} style="width:100%" type="text" class="filter-table input-medium search-query" placeholder="Type here to filter">
-</div>
-<table class="filter-table table table-striped {% if condensed %}table-condensed{% endif%}" style="table-layout:fixed">
-  <thead>
-    <tr>
-      <th>Fact</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody class="searchable">
-    {% for fact in facts %}
-    <tr>
-      {% if show_node %}
-        <td>{{fact.node}}</td>
-      {% else %}
-        <td>{{fact.name}}</td>
-      {% endif %}
-      <td style="word-wrap:break-word">{{fact.value}}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
-{%- endmacro %}
 {% macro search_results(msgs, autofocus=False, condensed=False, margin_top=20, margin_bottom=20) -%}
 <div class="filter" style="margin-bottom:{{margin_bottom}}px;margin-top:{{margin_top}}px;">
   <input {% if autofocus %} autofocus="autofocus" {% endif %} style="width:100%" type="text" class="filter-table input-medium search-query" placeholder="Type here to filter">
