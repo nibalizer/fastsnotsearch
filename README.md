@@ -20,6 +20,17 @@ Prereqs:
 
     #  apt-get install python-notmuch notmuch-vim
     #  apt-get install python notmuch libnotmuch-dev apache2 libapache2-mod-wsgi python-flask
+    
+    
+Setting up notmuch
+
+    $ notmuch init
+    (answer some questions)
+    $notmuch new
+    
+To research db
+
+    $ notmuch new
 
 Development mode:
 
