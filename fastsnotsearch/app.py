@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import datetime
 
 import simplejson as json
@@ -77,7 +78,7 @@ def searchv3():
         msg['id'] = i.get_message_id()
         msg['subject'] = i.get_header('subject')
         try:
-          msg['summary'] = str(i)
+          msg['summary'] = str(i).encode('ascii')
         except UnicodeDecodeError:
           print i
           msg['summary'] = 'unable to get summary'
